@@ -8,10 +8,10 @@ public class Analyzer {
     public static List<String> parser(String pathname ) throws IOException {
         Scanner scanner = new Scanner(new File(pathname));
 
-        List<String> words = new ArrayList<>();
+        List<String> words = new ArrayList<>();  // this list will contain all words from the text
 
         while (scanner.hasNext()){
-            String next = scanner.next();
+            String next = scanner.next();  //scan for next token
             next = next.replaceAll("[^\\w\\s[_]]", "");
             String[] wordsInToken = next.split("[.,)(}{!?:\"]?\\s+[.,)(}{!?:\"]?");
             words.addAll(Arrays.asList(wordsInToken));
@@ -28,13 +28,13 @@ public class Analyzer {
             int count = 0;
             for (int i = 0; i < word.length(); i++) {
                 char ch = word.charAt(i);
-                if(ch == 'a'|| ch == 'e'|| ch == 'i' ||ch == 'o' ||ch == 'u'||ch == ' '){
+                if(ch == 'a'|| ch == 'e'|| ch == 'i' ||ch == 'o' ||ch == 'u'||ch == ' '){  // check if vowel
                     count ++;
                 }
 
             }
 
-            if (count > word.length() - count){
+            if (count > word.length() - count){  // check if vowels more than consonant
                 set.add(word);
             }
 
