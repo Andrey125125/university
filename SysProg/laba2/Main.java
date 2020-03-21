@@ -1,5 +1,7 @@
 package laba2;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -45,7 +47,8 @@ public class Main {
         doStuff("0", 0);  //generate all possible path here
         words = pathToWord(paths);  // convert paths to words
 
-        System.out.println(words);  //print answer here
+        System.out.println("all possible paths: " + paths);
+        System.out.println("and words: " +  words);  //print answer here
 
     }
 
